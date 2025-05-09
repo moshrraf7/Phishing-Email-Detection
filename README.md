@@ -1,6 +1,6 @@
 # **Phishing Email Detection Using Machine Learning**
 
-This project builds a phishing email detection system using machine learning techniques. It uses Natural Language Processing (NLP) for text vectorization and Random Forest classifier (or any other ML model) for classification. The goal is to detect whether an email is a phishing email or legitimate based on its content. <br> Author-Krish Gupta
+This project builds a phishing email detection system using machine learning techniques. It uses Natural Language Processing (NLP) for text vectorization and Random Forest classifier (or any other ML model) for classification. The goal is to detect whether an email is a phishing email or legitimate based on its content. <br> moshrraf
 
 ---
 
