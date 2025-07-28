@@ -2,6 +2,7 @@ import pickle
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+import os
 
 def train_model(data_file, model_file):
     # Load preprocessed data
@@ -27,4 +28,11 @@ def train_model(data_file, model_file):
     print(f"Model saved to {model_file}")
 
 if __name__ == "__main__":
-    train_model("data/preprocessed_data.pkl", "models/phishing_detector.pkl")
+    # Get the directory of the script and navigate to project root
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)
+    
+    data_file = os.path.join(project_root, "data", "preprocessed_data.pkl")
+    model_file = os.path.join(project_root, "models", "phishing_detector.pkl")
+    
+    train_model(data_file, model_file)
