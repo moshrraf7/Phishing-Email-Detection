@@ -1,6 +1,15 @@
 # **Phishing Email Detection Using Machine Learning**
 
-This project builds a phishing email detection system using machine learning techniques. It uses Natural Language Processing (NLP) for text vectorization and Random Forest classifier (or any other ML model) for classification. The goal is to detect whether an email is a phishing email or legitimate based on its content. <br> moshrraf
+This project builds a phishing email detection system using machine learning techniques. It uses Natural Language Processing (NLP) for text vectorization and Random Forest classifier (or any other ML model) for classification. The goal is to detect whether an email is a phishing email or legitimate based on its content.
+
+## **Quick Start**
+Run the automated setup script:
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+Or follow the manual installation steps below.
 
 ---
 
@@ -54,7 +63,7 @@ cd phishing-email-detection
 
 ### **2. Set up a Virtual Environment (optional but recommended)**
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 Activate the virtual environment:
 - **Windows**: 
@@ -70,7 +79,7 @@ Activate the virtual environment:
 
 ### **3. Install Dependencies**
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements/requirements.txt
 ```
 
 ---
@@ -80,13 +89,13 @@ pip install -r requirements.txt
 ### **Step 1: Install Dependencies**
 Make sure all required libraries are installed:
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements/requirements.txt
 ```
 
 ### **Step 2: Preprocess Data**
 Run the `preprocess.py` script to preprocess the raw data and save it as a pickle file:
 ```bash
-python src/preprocess.py
+python3 src/preprocess.py
 ```
 This script:
 - Loads the raw email dataset (`phishing_emails.csv`).
@@ -96,7 +105,7 @@ This script:
 ### **Step 3: Train the Model**
 Train the machine learning model by running the `train.py` script:
 ```bash
-python src/train.py
+python3 src/train.py
 ```
 This script:
 - Loads the preprocessed data.
@@ -109,7 +118,7 @@ This script:
 ### **Step 4: Make Predictions**
 Predict phishing emails using the `predict.py` script:
 ```bash
-python src/predict.py
+python3 src/predict.py
 ```
 This script:
 - Loads the trained model (`phishing_detector.pkl`) and vectorizer.
@@ -147,14 +156,14 @@ If the virtual environment becomes "locked" (you cannot install or uninstall pac
    ```
 3. Recreate and activate the virtual environment:
    ```bash
-   python -m venv venv
+   python3 -m venv venv
    cd venv\bin
    \Activate or .\Activate.ps1 # For Windows u need to enter that in powershell 
    source venv/bin/activate  # For macOS/Linux
    ```
 4. Reinstall dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip3 install -r requirements/requirements.txt
    ```
 
 ---

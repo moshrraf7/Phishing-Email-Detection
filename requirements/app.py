@@ -1,4 +1,7 @@
 from flask import Flask, request, jsonify
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.predict import predict_email
 
 app = Flask(__name__)
