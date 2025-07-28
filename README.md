@@ -89,9 +89,9 @@ Run the `preprocess.py` script to preprocess the raw data and save it as a pickl
 python src/preprocess.py
 ```
 This script:
-- Loads the raw email dataset (`phishing_emails.csv`).
+- Loads the raw email dataset (`data/phishing_emails.csv`).
 - Converts the email text into a numerical format using TF-IDF vectorization.
-- Saves the processed data to `preprocessed_data.pkl`.
+- Saves the processed data to `data/preprocessed_data.pkl`.
 
 ### **Step 3: Train the Model**
 Train the machine learning model by running the `train.py` script:
@@ -102,7 +102,7 @@ This script:
 - Loads the preprocessed data.
 - Splits it into training and testing sets.
 - Trains a Random Forest classifier (or other ML models) using the training data.
-- Saves the trained model to `phishing_detector.pkl`.
+- Saves the trained model to `models/phishing_detector.pkl`.
 
 **Note**: To try a different model, replace the `RandomForestClassifier` in `train.py` with another algorithm, like `LogisticRegression`.
 
@@ -112,12 +112,24 @@ Predict phishing emails using the `predict.py` script:
 python src/predict.py
 ```
 This script:
-- Loads the trained model (`phishing_detector.pkl`) and vectorizer.
+- Loads the trained model (`models/phishing_detector.pkl`) and vectorizer.
 - Takes an input email and predicts whether it’s phishing or legitimate.
 
 To test with your own email, modify the `email_text` variable in `predict.py`:
 ```python
 email_text = "Your account has been compromised. Click here to reset your password."
+```
+
+### **Step 5: Run Flask Web App (Optional)**
+You can also run the web interface for the phishing detector:
+```bash
+python requirements/app.py
+```
+Then send POST requests to `http://localhost:5000/predict` with JSON data:
+```json
+{
+  "email": "Your email text here"
+}
 ```
 
 ---

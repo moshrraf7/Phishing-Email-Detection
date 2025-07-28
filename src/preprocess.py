@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
+import os
 
 def preprocess_data(input_file, output_file):
     # Load the CSV file
@@ -24,4 +25,11 @@ def preprocess_data(input_file, output_file):
     print(f"Preprocessed data saved to {output_file}")
 
 if __name__ == "__main__":
-    preprocess_data("data/phishing_emails.csv", "data/preprocessed_data.pkl")
+    # Get the directory of the script and navigate to project root
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)
+    
+    input_file = os.path.join(project_root, "data", "phishing_emails.csv")
+    output_file = os.path.join(project_root, "data", "preprocessed_data.pkl")
+    
+    preprocess_data(input_file, output_file)
